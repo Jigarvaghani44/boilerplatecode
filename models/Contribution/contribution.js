@@ -4,17 +4,22 @@ const mongoose = require('mongoose');
 const contributerSchema= mongoose.Schema({
     
     user:{
-        type:Number,
+        type:Object,
         require:true
     },
     repository:{
-        type:Number,
+        type:Object,
         require:true
     },
     line_count:{
         type:Number,
         require:true
     },
+    id:{
+        type:Number,
+        require:true,
+        unique:true
+    }
 })
 
 const Contribution = mongoose.model("Contribution",contributerSchema)

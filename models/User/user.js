@@ -5,7 +5,8 @@ const userSchema= mongoose.Schema({
     
     id:{
         type:Number,
-        require:true
+        require:true,
+        unique:true
     },
     login:{
         type:String,

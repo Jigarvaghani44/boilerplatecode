@@ -13,7 +13,8 @@ const morgan = require('morgan')
 
 const morganFormat = ":method :url :status :response-time ms ";
 const userRoutes = require('./routes/userRouts')
-
+const repoRoutes = require('./routes/repoRouts');
+const contributionRoutes = require("./routes/contributionRoutes");
 
 const init = async () => {
   const server = Hapi.server({
@@ -21,7 +22,8 @@ const init = async () => {
     host: "localhost",
   });
   await server.route(userRoutes)
-
+  await server.route(repoRoutes)
+  await server.route(contributionRoutes)
   await server.ext("onRequest", (request, h) => {
     const morganMiddleware = morgan(morganFormat, {
       stream: {
