@@ -1,0 +1,24 @@
+{"level":"info","message":{"method":"GET","responseTime":4.952,"status":200,"url":"/hello"}}
+{"level":"info","message":{"method":"POST","responseTime":32.94,"status":201,"url":"/add-document"}}
+{"level":"info","message":{"method":"GET","responseTime":5.111,"status":200,"url":"/hello"}}
+{"level":"info","message":{"method":"GET","responseTime":4.446,"status":200,"url":"/hello"}}
+{"level":"info","message":{"method":"GET","responseTime":4.985,"status":200,"url":"/hello"}}
+{"level":"info","message":{"method":"GET","responseTime":5.024,"status":200,"url":"/hello"}}
+{"level":"info","message":{"method":"POST","responseTime":6.165,"status":404,"url":"/hello"}}
+{"level":"info","message":{"method":"GET","responseTime":2.769,"status":200,"url":"/hello"}}
+{"level":"info","message":{"method":"GET","responseTime":5.268,"status":200,"timestamp":"2024-11-27T07:26:27.604Z","url":"/hello"}}
+{"level":"info","message":{"method":"GET","responseTime":7.35,"status":200,"timestamp":1732692433158,"url":"/hello"}}
+{"level":"info","message":{"method":"GET","responseTime":6.705,"status":200,"timestamp":"2024-11-27T07:27:27.976Z","url":"/hello"}}
+{"level":"info","message":{"method":"GET","responseTime":4.604,"status":200,"timestamp":"2024-11-27 12:59:06","url":"/hello"}}
+{"level":"info","message":{"method":"POST","responseTime":21.222,"status":200,"timestamp":"2024-11-27 16:49:00","url":"/user-insert"}}
+{"level":"info","message":{"method":"GET","responseTime":1.427,"status":404,"timestamp":"2024-11-27 16:51:50","url":"/users/1"}}
+{"level":"info","message":{"method":"GET","responseTime":19.15,"status":200,"timestamp":"2024-11-27 16:52:49","url":"/users"}}
+{"level":"info","message":{"method":"GET","responseTime":14.908,"status":200,"timestamp":"2024-11-27 16:53:11","url":"/users"}}
+{"level":"info","message":{"method":"GET","responseTime":8.907,"status":404,"timestamp":"2024-11-27 16:54:50","url":"/users/1"}}
+{"level":"info","message":{"method":"GET","responseTime":7.169,"status":404,"timestamp":"2024-11-27 16:55:14","url":"/users/1"}}
+{"level":"info","message":{"method":"GET","responseTime":6.192,"status":404,"timestamp":"2024-11-27 16:56:40","url":"/users/1"}}
+{"level":"info","message":{"method":"GET","responseTime":5.11,"status":500,"timestamp":"2024-11-27 16:58:45","url":"/users/1"}}
+{"level":"info","message":{"method":"GET","responseTime":7.043,"status":500,"timestamp":"2024-11-27 16:59:17","url":"/users/1"}}
+{"level":"info","message":{"method":"GET","responseTime":1.134,"status":500,"timestamp":"2024-11-27 16:59:27","url":"/users/1"}}
+{"level":"info","message":{"method":"GET","responseTime":15.026,"status":200,"timestamp":"2024-11-27 17:00:08","url":"/users/1"}}
+{"level":"info","message":{"method":"POST","responseTime":21.822,"status":200,"timestamp":"2024-11-27 17:00:42","url":"/user-insert"}}
