@@ -3,14 +3,14 @@ const axios = require('axios');
 const BASE_URL = 'https://api.github.com';
 
 // Function to search repositories
-const searchRepositories =(query = {}) => {
+const searchRepositories =async (query = {}) => {
   // query={q:"language:javascript"}
   // console.log(query);
   
   const params = new URLSearchParams(query).toString();
   // console.log(params);
   
-  return  axios.get(`${BASE_URL}/search/repositories?${params}`)
+  return await axios.get(`${BASE_URL}/search/repositories?${params}`)
 };
 
 // Function to get contributors

@@ -1,6 +1,8 @@
 require("dotenv").config();
 
 require("./models/db/config")
+
+const triggerRoute = require("./routes/trigger")
 const client = require("./elasticSearch");
 const port = process.env.PORT;
 const cluster = require('cluster')
@@ -24,6 +26,7 @@ const init = async () => {
   await server.route(userRoutes)
   await server.route(repoRoutes)
   await server.route(contributionRoutes)
+  await server.route(triggerRoute)
   await server.ext("onRequest", (request, h) => {
     const morganMiddleware = morgan(morganFormat, {
       stream: {

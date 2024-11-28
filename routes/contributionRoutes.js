@@ -16,7 +16,7 @@ const contributionRoutes =[   {
     path: '/contri-insert',
     handler: async (request, h) => {
        
-        const id = request.payload.id
+        // const id = request.payload.id
         const line_count =request.payload.line_count
         const user = await User.find({id})
         console.log(user);

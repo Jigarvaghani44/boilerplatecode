@@ -2,11 +2,11 @@ const Repository = require("../models/Repository/repository")
 
 const repoRoutes = [   {
     method: 'GET',
-    path: '/repo/{id}',
+    path: '/repo/{full_name}',
     handler: async (request, h) => {
-        let id = request.params.id;
-        console.log(id);
-        let res = await Repository.find({id})
+        let full_name = request.params.full_name;
+        console.log(full_name);
+        let res = await Repository.find({full_name})
         return { message: 'List of users', res };
     },
 },

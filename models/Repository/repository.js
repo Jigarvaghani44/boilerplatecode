@@ -9,7 +9,7 @@ const repositorySchema= mongoose.Schema({
         unique:true
     },
     owner:{
-        type:Number,
+        type:Object,
         require:true
     },
     full_name:{
