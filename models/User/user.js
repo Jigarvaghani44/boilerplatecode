@@ -24,6 +24,10 @@ const userSchema= mongoose.Schema({
         type:String,
         require:true
     },
+    contributions:{
+        type:Number,
+        require:true
+    }
     
 })
 

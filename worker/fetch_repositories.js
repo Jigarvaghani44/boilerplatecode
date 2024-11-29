@@ -26,7 +26,7 @@ const publisher = new Redis(); // Separate connection for publishing
 
       // Simulate fetching repositories
       const repositories = await searchRepositories(query);
-      const limitedRepositories = repositories.data.items.slice(0,3);
+      const limitedRepositories = repositories.data.items.slice(0,1);
       // console.log(limitedRepositories.length);
       for (i = 0; i < limitedRepositories.length; i++) {
         let temp = {

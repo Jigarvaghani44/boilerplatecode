@@ -6,7 +6,7 @@ const repositorySchema= mongoose.Schema({
     id:{
         type:Number,
         require:true,
-        unique:true
+       
     },
     owner:{
         type:Object,
