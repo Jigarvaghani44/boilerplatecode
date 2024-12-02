@@ -6,6 +6,8 @@ const triggerRoutes = {
     method: 'POST',
     path: '/api/v1/trigger',
     handler: async (request, h) => {
+     
+       
         const query = request.payload; // Example: { "query": "Node.js" }
         console.log(query);
         

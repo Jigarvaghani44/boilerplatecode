@@ -5,6 +5,8 @@ const userRoutes = [   {
     method: 'GET',
     path: '/users/{id}',
     handler: async (request, h) => {
+        console.log("in");
+        
         let _id = request.params.id;
         console.log(_id);
         let res = await User.find({_id})

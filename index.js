@@ -25,6 +25,7 @@ const Vision = require("@hapi/vision");
 const HapiSwagger = require("hapi-swagger");
 const Package = require("./package.json");
 const loginlogoutRoutes = require("./routes/loginlogoutRoutes")
+
 // Graceful shutdown
 async function gracefulShutdown() {
   isShuttingDown = true;
@@ -50,34 +51,36 @@ const init = async () => {
     host: "localhost",
   });
 
-     // Register JWT plugin
+    //  Register JWT plugin
      await server.register(Jwt);
-
-     // JWT authentication strategy
+  
+    //  JWT authentication strategy
      server.auth.strategy('jwt', 'jwt', {
-         keys: 'your_secret_key', // Replace with a strong secret key
+         keys: process.env.SECRETE_ID, // Replace with a strong secret key
          verify: {
              aud: false,
              iss: false,
              sub: false,
-             maxAgeSec: 3600, // 1 hour validity
+             nbf: true,
+             exp: true,
+            
          },
-         validate: async (artifacts, request, h) => {
-             // You can implement token blacklisting here
-             return { isValid: true, credentials: { userId: artifacts.decoded.payload.userId } };
-         },
+         validate: (artifacts, request, h) => {
+          // Additional validation if needed
+          return { isValid: true, credentials: { userId: artifacts.decoded.payload.userId } };
+      },
      });
  
      // Set default authentication strategy
      server.auth.default('jwt');
 
-     
+     await server.route(loginlogoutRoutes);  
   await server.route(userRoutes);
   await server.route(repoRoutes);
   await server.route(contributionRoutes);
   await server.route(triggerRoute);
   await server.route(healthCheckRout);
-  await server.route(loginlogoutRoutes);
+  
   await server.ext("onRequest", (request, h) => {
     const morganMiddleware = morgan(morganFormat, {
       stream: {
@@ -122,6 +125,19 @@ const init = async () => {
     ],
     grouping: "tags", // Group endpoints by tags
     documentationPath: "/docs", // Path for the Swagger UI
+    securityDefinitions: {
+      Bearer: {
+          type: 'apiKey',
+          name: 'Authorization',
+          in: 'header',
+          description: 'Bearer authentication for JWT tokens',
+      },
+  },
+  security: [
+      {
+          Bearer: [],
+      },
+  ],
   };
 
   // Register Plugins

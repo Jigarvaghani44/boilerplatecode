@@ -74,19 +74,19 @@ const contributionApiUrl = "http://localhost:3000/contri-insert";
         return;
       }
      
-      const contributorStats = contributors.map((contributor) => {
+      const contributorStats = (Array.isArray(contributors) ? contributors : []).map((contributor) => {
         const totalLines = contributor.weeks.reduce(
           (total, week) => total + (week.a - week.d), // Calculate net lines (additions - deletions)
           0
         );
-
+        // Your processing logic here
         return {
           repository: response.data.res[0].id,
           user: contributor.author.id,
           line_count: totalLines
-          
         };
-      });
+    });
+    
       
 
       for (let i = 0; i < contributorStats.length; i++) {
